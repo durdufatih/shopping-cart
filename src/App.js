@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import "./App.css";
 import Cart from "./Cart";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import { items } from "./data";
 import Product from "./Product";
@@ -57,8 +57,15 @@ function App() {
     >
       <div className="App">
         <header className="App-header">
-        <Route exact path="/" component={Product} />
-        
+
+        <Switch>
+          <Route exact path="/">
+            <Product />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
         </header>
 
        

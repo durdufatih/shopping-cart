@@ -1,14 +1,17 @@
 import { useContext } from "react";
 import { BookContext } from "./App";
+import { Link } from "react-router-dom";
 
-function Product(props) {
+function Product() {
   const context = useContext(BookContext);
   console.log(context);
   return (
     <div>
       <div>Shooping App</div>
 
-      <div>Cart</div>
+      <div>
+        <Link to="/cart">Cart</Link>
+      </div>
       <div className="cardLayout">
         {context.state.bookList.map((item, index) => {
           return (
